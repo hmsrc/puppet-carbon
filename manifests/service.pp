@@ -1,6 +1,6 @@
 class carbon::service (
   $carbon_conf  = $::carbon::carbon_conf,
-  $cache_enable = $::caron::cache_enable,
+  $cache_enable = $::carbon::cache_enable,
   $cache_ensure = $::carbon::cache_ensure,
   ) {
 

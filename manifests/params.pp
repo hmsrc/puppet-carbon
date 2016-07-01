@@ -47,10 +47,8 @@ class carbon::params {
   $cache_amqp_password                  = 'guest'
   $cache_amqp_exchange                  = 'graphite'
   $cache_relay_amqp_metric_name_in_body = false
-  $cache_storage_schemas                = [
-    { name => 'carbon', pattern => '^carbon\.', retentions => '60:90d'},
-    { name => default_1min_for_1day, pattern => '.*', retentions => '60s:1d'},
-  ]
-
-
+  $cache_storage_schemas                = {
+    'carbon' => { pattern => '^carbon\.', retentions => '60:90d' },
+    'default_1min_for_1day' => { pattern => '.*', retentions => '60s:1d' },
+  }
 }

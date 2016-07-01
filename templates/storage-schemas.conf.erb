@@ -6,8 +6,8 @@
 #  retentions = timePerPoint:timeToStore, timePerPoint:timeToStore, ...
 #
 #
-<% @cache_storage_schemas.each do |schema| -%>
-[<%= schema["name"] %>]
+<% @cache_storage_schemas.each_pair do |name,schema| -%>
+[<%= name %>]
 pattern = <%= schema["pattern"] %>
 retentions = <%= schema["retentions"] %>
 
