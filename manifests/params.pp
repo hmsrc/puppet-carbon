@@ -50,6 +50,6 @@ class carbon::params {
   $cache_storage_schemas                = {
     'carbon' => { pattern => '^carbon\.', retentions => '60:90d' },
     'default_1min_for_1day' => { pattern => '.*', retentions => '60s:1d' },
-  }
+  },
   $amqp_pip_pkgs                        = ['txamqp'],
 }
