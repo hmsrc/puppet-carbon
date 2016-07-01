@@ -40,6 +40,7 @@ class carbon::config (
   $cache_amqp_password                  = $::carbon::cache_amqp_password,
   $cache_amqp_exchange                  = $::carbon::cache_amqp_exchange,
   $cache_relay_amqp_metric_name_in_body = $::carbon::cache_relay_amqp_metric_name_in_body,
+  $cache_storage_schemas                = $::carbon::cache_storage_schemas,
   ) {
     #Write config file as template
     file { $carbon_conf:
@@ -48,5 +49,15 @@ class carbon::config (
       mode    => '0644',
       content => template('carbon/carbon.conf.erb'),
       require => Class['carbon::install'],
+    }
+
+
+    #Storage Schemas
+    file { "${carbon_conf_dir}/storage-schemas.conf":
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      content => template('carbon/storage-schemas.conf.erb'),
+      require => File[$carbon_conf],
     }
   }
