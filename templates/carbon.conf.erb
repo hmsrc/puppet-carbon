@@ -1,39 +1,40 @@
-STORAGE_DIR    = /var/lib/carbon/
-LOCAL_DATA_DIR = /var/lib/carbon/whisper/
-WHITELISTS_DIR = /var/lib/carbon/lists/
-CONF_DIR       = /etc/carbon/
-LOG_DIR        = /var/log/carbon/
-PID_DIR        = /var/run/
-ENABLE_LOGROTATION = False
-USER = carbon
-MAX_CACHE_SIZE = inf
-MAX_UPDATES_PER_SECOND = 500
-MAX_CREATES_PER_MINUTE = 50
-LINE_RECEIVER_INTERFACE = 0.0.0.0
-LINE_RECEIVER_PORT = 2003
-LINE_RECEIVER_BACKLOG = 1024
-ENABLE_UDP_LISTENER = False
-UDP_RECEIVER_INTERFACE = 0.0.0.0
-UDP_RECEIVER_PORT = 2003
-PICKLE_RECEIVER_INTERFACE = 0.0.0.0
-PICKLE_RECEIVER_PORT = 2004
-LOG_LISTENER_CONNECTIONS = True
-USE_INSECURE_UNPICKLER = False
-CACHE_QUERY_INTERFACE = 0.0.0.0
-CACHE_QUERY_PORT = 7002
-USE_FLOW_CONTROL = True
-LOG_UPDATES = False
-LOG_CACHE_HITS = False
-LOG_CACHE_QUEUE_SORTS = True
-CACHE_WRITE_STRATEGY = sorted
-WHISPER_AUTOFLUSH = False
-WHISPER_FALLOCATE_CREATE = True
-ENABLE_AMQP = False
-AMQP_VERBOSE = False
-AMQP_HOST = localhost
-AMQP_PORT = 5672
-AMQP_VHOST = /
-AMQP_USER = guest
-AMQP_PASSWORD = guest
-AMQP_EXCHANGE = graphite
-AMQP_METRIC_NAME_IN_BODY = False
+[cache]
+STORAGE_DIR               = <%= @cache_storage_dir %>
+LOCAL_DATA_DIR            = <%= @cache_local_data_dir %>
+WHITELISTS_DIR            = <%= @cache_whitelists_dir %>
+CONF_DIR                  = <%= @cache_conf_dir %>
+LOG_DIR                   = <%= @cache_log_dir %>
+PID_DIR                   = <%= @cache_pid_dir %>
+ENABLE_LOGROTATION        = <%= @cache_enable_logrotation.to_s %>
+USER                      = <%= @cache_user %>
+MAX_CACHE_SIZE            = <%= @cache_max_cache_size %>
+MAX_UPDATES_PER_SECOND    = <%= @cache_max_updates_per_second %>
+MAX_CREATES_PER_MINUTE    = <%= @cache_max_creates_per_minute %>
+LINE_RECEIVER_INTERFACE   = <%= @cache_line_receiver_interface %>
+LINE_RECEIVER_PORT        = <%= @cache_line_receiver_port %>
+LINE_RECEIVER_BACKLOG     = <%= @cache_line_receiver_backlog %>
+ENABLE_UDP_LISTENER       = <%= @cache_enable_udp_listener %>
+UDP_RECEIVER_INTERFACE    = <%= @cache_udp_receiver_interface %>
+UDP_RECEIVER_PORT         = <%= @cache_udp_receiver_port %>
+PICKLE_RECEIVER_INTERFACE = <%= @cache_pickle_receiver_interface %>
+PICKLE_RECEIVER_PORT      = <%= @cache_pickle_receiver_port%>
+LOG_LISTENER_CONNECTIONS  = <%= @cache_log_listener_connections %>
+USE_INSECURE_UNPICKLER    = <%= @cache_use_insecure_unpickler %>
+CACHE_QUERY_INTERFACE     = <%= @cache_cache_query_interface%>
+CACHE_QUERY_PORT          = <%= @cache_cache_query_port %>
+USE_FLOW_CONTROL          = <%= @cache_use_flow_control %>
+LOG_UPDATES               = <%= @cache_log_updates %>
+LOG_CACHE_HITS            = <%= @cache_log_cache_hits %>
+LOG_CACHE_QUEUE_SORTS     = <%= @cache_log_cache_queue_sorts %>
+CACHE_WRITE_STRATEGY      = <%= @cache_cache_write_strategy %>
+WHISPER_AUTOFLUSH         = <%= @cache_whisper_autoflush %>
+WHISPER_FALLOCATE_CREATE  = <%= @cache_whisper_fallocate_create %>
+ENABLE_AMQP               = <%= @cache_enable_amqp %>
+AMQP_VERBOSE              = <%= @cache_amqp_verbose %>
+AMQP_HOST                 = <%= @cache_amqp_host %>
+AMQP_PORT                 = <%= @cache_amqp_port %>
+AMQP_VHOST                = <%= @cache_amqp_vhost %>
+AMQP_USER                 = <%= @cache_amqp_user %>
+AMQP_PASSWORD             = <%= @cache_amqp_password %>
+AMQP_EXCHANGE             = <%= @cache_amqp_exchange %>
+AMQP_METRIC_NAME_IN_BODY  = <%= @cache_relay_amqp_metric_name_in_body %>

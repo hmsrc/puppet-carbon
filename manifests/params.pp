@@ -5,6 +5,8 @@ class carbon::params {
   $carbon_conf_dir = '/etc/carbon'
   $carbon_conf = "${carbon_conf_dir}/carbon.conf"
 
+  $cache_enable                         = true
+  $cache_ensure                         = 'running'
   # Cache Config.
   $cache_storage_dir                    = '/var/lib/carbon/'
   $cache_local_data_dir                 = '/var/lib/carbon/whisper/'
@@ -21,13 +23,13 @@ class carbon::params {
   $cache_line_receiver_port             = 2003
   $cache_line_receiver_backlog          = 1024
   $cache_enable_udp_listener            = false
-  $cache_udp_receiver_interface         = 0.0.0.0
+  $cache_udp_receiver_interface         = '0.0.0.0'
   $cache_udp_receiver_port              = 2003
-  $cache_pickle_receiver_interface      = 0.0.0.0
+  $cache_pickle_receiver_interface      = '0.0.0.0'
   $cache_pickle_receiver_port           = 2004
   $cache_log_listener_connections       = true
   $cache_use_insecure_unpickler         = false
-  $cache_cache_query_interface          = 0.0.0.0
+  $cache_cache_query_interface          = '0.0.0.0'
   $cache_cache_query_port               = 7002
   $cache_use_flow_control               = true
   $cache_log_updates                    = false
