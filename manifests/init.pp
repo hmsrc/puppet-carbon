@@ -1,48 +1,41 @@
 # Class: carbon
 # ===========================
 #
-# Full description of class carbon here.
+# Installs/Configures/Runs Carbon Cache/Relay
 #
 # Parameters
 # ----------
 #
-# Document parameters here.
+# * `carbon_pkg`
+# Name of carbon package to install, Default `python-carbon`
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# * `carbon_pkg_ver`
+# Version of carbon package to install, Default `installed`
 #
-# Variables
-# ----------
+# * `carbon_conf_dir`
+# Location of carbon config files, Default `/etc/carbon`
 #
-# Here you should define a list of variables that this module would require.
+# * `carbon_conf`
+# Location of carbon.conf, Default `${carbon_conf_dir}/carbon.conf`
 #
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
-# Examples
-# --------
-#
-# @example
-#    class { 'carbon':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Matthew Nicholson <matthew.a.nicholson@gmail.com>
 #
 # Copyright
 # ---------
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Matthew Nicholson, unless otherwise noted.
 #
-class carbon {
+class carbon (
+  String $carbon_pkg      = $::carbon::params::carbon_pkg,
+  String $carbon_pkg_ver  = $::carbon::params::carbon_pkg_ver,
+  String $carbon_conf_dir = $::carbon::params::carbon_conf_dir,
+  String $carbon_conf     = $::carbon::params::carbon_conf,
+  ) inherits carbon::params {
 
+  include carbon::install
 
 }
