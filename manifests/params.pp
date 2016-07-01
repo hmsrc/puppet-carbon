@@ -51,5 +51,6 @@ class carbon::params {
     'carbon' => { pattern => '^carbon\.', retentions => '60:90d' },
     'default_1min_for_1day' => { pattern => '.*', retentions => '60s:1d' },
   }
-  $amqp_pkgs                            = ['python-amqplib','python-amqp','python2-pika']
+  $amqp_pkgs                            = ['python-devel'],
+  $amqp_pip_pkgs                        = ['txamqp'],
 }

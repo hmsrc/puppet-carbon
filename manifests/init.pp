@@ -77,6 +77,7 @@ class carbon (
   Boolean $cache_relay_amqp_metric_name_in_body = $::carbon::params::cache_relay_amqp_metric_name_in_body,
   Hash $cache_storage_schemas                   = $::carbon::params::cache_storage_schemas,
   Array $amqp_pkgs                              = $::carbon::params::amqp_pkgs,
+  Array $amqp_pip_pkgs                          = $::carbon::params::amqp_pip_pkgs,
   ) inherits carbon::params {
 
   #Validate some.
