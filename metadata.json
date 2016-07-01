@@ -1,0 +1,15 @@
+{
+  "name": "sjoeboo-carbon",
+  "version": "0.1.0",
+  "author": "sjoeboo",
+  "summary": "Install/configure/Run carbon(cache/relay/aggreagate)",
+  "license": "Apache-2.0",
+  "source": "https://github.com/sjoeboo/puppet-carbon",
+  "project_page": "https://github.com/sjoeboo/puppet-carbon",
+  "issues_url": "https://github.com/sjoeboo/puppet-carbon/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
