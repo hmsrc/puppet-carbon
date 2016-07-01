@@ -8,8 +8,8 @@
   "project_page": "https://github.com/sjoeboo/puppet-carbon",
   "issues_url": "https://github.com/sjoeboo/puppet-carbon/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"stankevich-python","version_requirement":">= 1.11.0"}
   ],
   "data_provider": null
 }
-
